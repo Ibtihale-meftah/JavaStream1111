@@ -1,7 +1,6 @@
-/**
- * Classe représentant un étudiant
- */
-class Etudiant {
+package Etud;
+
+public class Etudiant {
     private int idEtudiant;
     private String nom;
     private String adresseMail;
@@ -30,7 +29,3 @@ class Etudiant {
                 idEtudiant, nom, adresseMail, moyenne);
     }
 }
-
-/**
- * Classe principale démontrant l'utilisation des Streams Java
- */
