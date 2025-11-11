@@ -243,7 +243,61 @@ Les exercices suivants utilisent la liste de clients fournie par `ClientData.get
 
 ## VII. Solutions des Exercices
 
-*(Les solutions seront fournies dans la section suivante.)*
+## Solution :
+
+ ## Exercice 1 : Filtrage et Tri
+        List<Client> lyonClients = clients.stream()
+                .filter(c -> "Lyon".equals(c.getAdresse()))
+                .sorted(Comparator.comparing(Client::getChiffreAffaire).reversed())
+                .collect(Collectors.toList());
+        System.out.println("1. Clients de Lyon (CA décroissant) :");
+        lyonClients.forEach(System.out::println);
+
+//Trouver les clients qui habitent à Lyon
+// et les trier par chiffre d'affaires décroissant (du plus grand au plus petit)
+
+ ## Exercice 2 : Transformation et Collecte
+        Map<Integer, String> idToNameMap = clients.stream()
+                .collect(Collectors.toMap(Client::getIdClient, Client::getNom));
+        System.out.println("\n2. Map ID -> Nom :");
+        idToNameMap.forEach((id, nom) -> System.out.println("ID " + id + " : " + nom));
+
+//Créer une Map où la clé est l'ID du client et la valeur est son nom (clé = idClient, valeur = nom)
+
+
+## Exercice 3 : Agrégation
+        double caTotalParis = clients.stream()
+                .filter(c -> "Paris".equals(c.getAdresse()))
+                .mapToDouble(Client::getChiffreAffaire)
+                .sum();
+        System.out.printf("\n3. CA total des clients de Paris : %.2f\n", caTotalParis);
+
+//Calculer le chiffre d'affaires total des clients qui habitent à Paris
+
+## Exercice 4 : Regroupement
+        Map<String, Double> caMoyenParVille = clients.stream()
+                .collect(Collectors.groupingBy(
+                        Client::getAdresse,
+                        Collectors.averagingDouble(Client::getChiffreAffaire)
+                ));
+        System.out.println("\n4. CA moyen par ville :");
+        caMoyenParVille.forEach((ville, moyenne) -> System.out.printf("%s : %.2f\n", ville, moyenne));
+
+//Regrouper les clients par ville et calculer pour chaque ville le chiffre d'affaires moyen
+
+## Exercice 5 : Vérification et Transformation
+        boolean caSup50k = clients.stream()
+                .allMatch(c -> c.getChiffreAffaire() > 50000);
+        System.out.println("\n5. Tous les clients ont un CA > 50 000 ? " + caSup50k);
+        if (caSup50k) {
+            List<String> nomsMajuscules = clients.stream()
+                    .map(Client::getNom)
+                    .map(String::toUpperCase)
+                    .collect(Collectors.toList());
+            System.out.println("Noms en majuscules : " + nomsMajuscules);
+        }
+
+//Vérifier si tous les clients ont un CA supérieur à 50 000 Si oui, afficher la liste de leurs noms en majuscules
 
 ---
 
