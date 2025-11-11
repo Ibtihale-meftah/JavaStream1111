@@ -241,9 +241,7 @@ Les exercices suivants utilisent la liste de clients fournie par `ClientData.get
 
 ---
 
-## VII. Solutions des Exercices
-
-## Solution :
+## VII. Solutions des Exercices 
 
  ## Exercice 1 : Filtrage et Tri
         List<Client> lyonClients = clients.stream()
