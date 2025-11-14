@@ -81,6 +81,7 @@ clients.stream()
     .filter(c -> c.getChiffreAffaire() > 500000)
     .forEach(System.out::println);
 ```
+\\ c'est une opération d'agregation \\
 
 ### 2. Transformation : `map(Function<T, R> mapper)`
 
