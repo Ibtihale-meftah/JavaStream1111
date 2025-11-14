@@ -55,6 +55,7 @@ public class ExempleParallelStreamClient {
                 .collect(Collectors.toList());
         long tempsSeq = System.currentTimeMillis() - debutSeq;
 
+        // la seule différence syntaxique est le mot parallel
         // Parallel Stream
         long debutPar = System.currentTimeMillis();
         List<Client> clientsSoldeElevePar = clients.parallelStream()
@@ -67,6 +68,22 @@ public class ExempleParallelStreamClient {
         System.out.println("Temps parallèle : " + tempsPar + " ms");
         System.out.printf("Gain de performance : %.2fx\n", tempsSeq / (double) tempsPar);
         System.out.println();
+
+        // ==========================================
+        //l'execution :
+       // === DÉMONSTRATION DES PARALLEL STREAMS ===
+
+//Nombre total de clients : 0
+//Nombre de cœurs disponibles : 8
+
+//============================================================
+
+//EXEMPLE 1 : Filtrage des clients avec solde > 5000
+//------------------------------------------------------------
+//Résultats trouvés : 0
+//Temps séquentiel : 7 ms
+//Temps parallèle : 9 ms
+//Gain de performance : 0,78x
 
         // ==========================================
         // EXEMPLE 2 : Map avec Traitement Coûteux
@@ -98,7 +115,6 @@ public class ExempleParallelStreamClient {
         System.out.println("Temps parallèle : " + tempsPar + " ms");
         System.out.printf("Gain de performance : %.2fx\n", tempsSeq / (double) tempsPar);
         System.out.println();
-
         // ==========================================
         // EXEMPLE 3 : GroupBy avec Parallel Stream
         // ==========================================
@@ -286,4 +302,5 @@ public class ExempleParallelStreamClient {
         System.out.println("=".repeat(60));
         System.out.println("FIN DES DÉMONSTRATIONS");
     }
+
 }
