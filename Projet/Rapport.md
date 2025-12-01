@@ -30,7 +30,7 @@ Chaque utilisateur possède un compte client qui contient :
 
 -ses moyens de paiement enregistrés
 
-3. Panier d’achat
+## 3. Panier d’achat
 
 Chaque utilisateur peut ajouter des produits dans un panier d’achat.
 Le panier contient plusieurs produits avec :
