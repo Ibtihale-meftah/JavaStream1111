@@ -165,6 +165,10 @@ Vous travaillerez principalement dans un **modèle 2-tiers** pour des raisons p�
 
 RQ: dans le fichier pom.xml on fait /*injection des dependances* ça veut dire ? pour demarrer il faut mlire des fichier de dependances / son role est de nous indiquer qu'elle fichier je doit parametrer
 injection sql / invrtion de controle / 1ere qst: quel type de bdd ?
+// concurence : gestion des accées summultanés à la meme resource 
+/// solution : 1.priorité à la modification : écriture 
+                2. disponibilité: ne pas accepter à ce que la ressource soit partagée
+                3. pooling: plusieurs actions sur la meme base en meme tempts
 
 #### Étape 3 : Patienter pendant l'indexation
 IntelliJ va créer la structure du projet et indexer les bibliothèques. Attendez que la barre de progression en bas à droite disparaisse.
