@@ -260,7 +260,7 @@ Dans le panneau **Run** en bas de l'écran, vous devriez voir :
 Projet Maven initialisé avec succès !
 Prêt à explorer JDBC avec MySQL et PostgreSQL.
 
-Version Java utilisée : 11.0.15
+Version Java utilisée : 23.0.2
 
 Process finished with exit code 0
 ```
@@ -282,6 +282,7 @@ Désormais, vous pourrez exécuter votre programme en cliquant sur le bouton ver
 
 1. **Quelle différence entre un projet Maven et un projet Java simple ?**
    - *Indice : pensez à la gestion des dépendances externes*
+   - dans un projet java simple on a pas de dependances externes à gérer contrairement à un projet Maven il sert à 
 
 2. **Exercice** : Modifiez la classe `Main` pour afficher également le nom du système d'exploitation (`System.getProperty("os.name")`)
 
