@@ -355,6 +355,7 @@ Vous devriez voir un fichier similaire à ceci :
 
 #### Étape 1 : Ajouter la section properties
 Juste après la balise `<version>`, ajoutez :
+/* commentaire: les propriétés vont etere utiliser pour injecter/indiquer l'addr url de la bdd, le mdp...
 
 ```xml
 <properties>
