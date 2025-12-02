@@ -163,6 +163,8 @@ Vous travaillerez principalement dans un **modèle 2-tiers** pour des raisons p�
    - **Version** : laissez `1.0-SNAPSHOT`
 4. Cliquez sur **Create**
 
+RQ: dans le fichier pom.xml on fait /*injection des dependances*/ son role est de nous indiquer qu'elle fichier je doit parametrer
+
 #### Étape 3 : Patienter pendant l'indexation
 IntelliJ va créer la structure du projet et indexer les bibliothèques. Attendez que la barre de progression en bas à droite disparaisse.
 
